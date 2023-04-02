@@ -1,3 +1,4 @@
+
 body {
     background-image: linear-gradient(to right,rgb(7, 225, 253) , rgb(255, 255, 255));
     font-family: 'Alkatra', cursive;
@@ -23,12 +24,11 @@ button {
     width: 50%;
 }
 
-/*.hidden {
+.hidden {
     display: none;  
-}*/
+}
 
-.notification, .hidden {
-    display: block;
+.notification {
     margin-left: auto;
     margin-right: auto;
     width: 40%;
