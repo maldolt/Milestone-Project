@@ -51,8 +51,12 @@ window.onload = function() {
             wordDiv.insertAdjacentHTML('beforeend', html);
         }
     };
-
     init('start');
+
+    //buttons press
+    letters.forEach(button => {
+        button.addEventListener('click', letterPress);
+    });
 }
 
 

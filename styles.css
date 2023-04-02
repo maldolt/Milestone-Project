@@ -37,8 +37,8 @@ button {
     font-size: 30px;
     border-radius: 16px;
   }
-
-  .word-div {
+/*word style, when they finally work */
+.word-div {
     display: inline-flex;
     font-size: 33px;
 }
