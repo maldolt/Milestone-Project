@@ -17,14 +17,34 @@ window.onload = function() {
     let lives;
 
     //words for the word div
-    let words = ['whale', 'turtle', 'shark'];
+    let words = new Map ([['whale', 'largest animal'], 
+    ['fish', ' most common'], ['shark', 'dangerous']]);
 
     let wordChoice = [...words.keys()];
+    //Get random word from choices
     let getRandomWord = function(list) {
         return list[Math.floor(Math.random() * wordChoice.length)];
     };
-    let select_word = getRandomWord(wordChoice);
+    let select_word= getRandomWord(wordChoice)   
+console.log(wordChoice);
 
-    console.log(words);
+// making buttons for letters, setting starting point and reset
+    let init = function(state){
+        wordDiv.innerHTML = '';
+        if (state === 'start') {
+            //letters
+            for(let i of 'abcdefghijklmnopqrstuvwxyz'){
+                let html = `<button class="alphabet">${i.toUpperCase()}</button>`;
+                lettersDiv.insertAdjacentHTML('beforeend',html);
+            }
+        }else if (state === 'reset'){
+            letters.forEach(button => {
+                button.wordChoice.remove('disabled');
+            });
+            notification.wordChoice.add('hidden');
+        }
+    };
+    letters = document.querySelectorAll('.alphabet');
+    livesSpan.textContent = lives;
 }
 
