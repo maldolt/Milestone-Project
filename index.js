@@ -17,8 +17,11 @@ window.onload = function() {
 
     //words for the word div
     let words = new Map([
-        ['whale'],['turtle'],['fish'],
+        ['fish', '🐟'],
+        ['shark', '🦈'],
+        ['whale', '🐳'],
       ]);
+      
       
 
     let word_list = [...words.keys()];
@@ -78,4 +81,3 @@ let decreaseLife = function () {
 
    
 //need to countinue to trouble shoot, letters are not showing up
-

@@ -1,4 +1,3 @@
-
 body {
     background-image: linear-gradient(to right,rgb(7, 225, 253) , rgb(255, 255, 255));
     font-family: 'Alkatra', cursive;
@@ -25,37 +24,48 @@ body {
 }
 
 .hidden {
-    display: none;  
+    display: none;
 }
-
+/*added position, top, left, trasform*/
 .notification {
-    margin-left: auto;
-    margin-right: auto;
     width: 40%;
     box-shadow: 10px 10px 5px rgb(176, 238, 249);
     background-color: rgb(249, 252, 253);
     font-size: 30px;
     border-radius: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-/*word style, when they finally work */
-.word-div {
+ /*word style, when they finally work */
+  .word-div {
     display: inline-flex;
     font-size: 33px;
-}
-
-.word {
+  }
+  .word {
     margin-right: 1.5rem;
-}
+  }
 /*maybe add the alphabet style*/
-.alphabet {
+  .alpha {
     float:left;
     margin: 0 10px 10px 0;
     list-style:none;
     width:35px;
     height:50px;
-    padding-top:10px;
+    padding-top:0;
     background: white;
     cursor:pointer;
     border: solid 3px black;
-}  
-  
+    font-size: 30px;
+    font-family: 'Alkatra', cursive;
+  }
+  .alpha:hover {
+    background-color: rgb(29, 133, 153);
+    border: none;
+  }
+
+  .disabled {
+    pointer-events: none;
+    background-color: rgb(241, 156, 45);
+  }
