@@ -12,23 +12,26 @@ window.onload = function() {
     let resetButton = document.querySelector(".reset"); //html line 24
     let notificationSpan = document.querySelector(".notification-span"); //html line 30
     let playAgain = document.querySelector(".notification-button"); //html line 31
-
-    //words for the word div
-    let words = new Map ([['whale', 'largest animal'], 
-    ['fish', 'most common'], ['shark', 'dangerous']]);
-
-    let wordChoice = [...words.keys()];
-    //Get random word from choices
-    let getRandomWord = function(list) {
-        return list[Math.floor(Math.random() * list.length)];
-    };
-    let select_word;
     let letters;
     let lives;
+
+    //words for the word div
+    let words = new Map ([
+        ['whale', 'largest animal'], 
+        ['fish', 'most common'], 
+        ['shark', 'dangerous']
+    ]);
+
+    let word_list = [...words.keys()];
+    //Get random word from choices
+    let getRandomWord = function(list) {
+        return list[Math.floor(Math.random() * word_list.length)];
+    };
+    let select_word;
+
+
 // making buttons for letters, setting starting point and reset
     let init = function(state){
-        letters = document.querySelectorAll('.alphabet');
-        lives = 8;
         wordDiv.innerHTML = '';
         if (state === 'start') {
             //letters
@@ -39,25 +42,26 @@ window.onload = function() {
         }else if (state === 'reset'){
             letters.forEach(button => {
             button.classList.remove('disabled');
-             notification.classList.add('hidden');
             });
-            select_word = getRandomWord(wordChoice);           
+            notification.classList.add('hidden');
         }
+        lives = 8; 
+
+        letters = document.querySelectorAll(".alphabet");
         livesSpan.textContent = lives;
-
+     
         //selecting the word from choices
-
+   
+        select_word = getRandomWord(word_list);           
         for(let i = 0; i < select_word.length; i++){
             let html = `<p class="word">_</p>`;
             wordDiv.insertAdjacentHTML('beforeend', html);
-        }
-    };
+        }    
+    }; 
     init('start');
-
-    //buttons press
-    letters.forEach(button => {
-        button.addEventListener('click', letterPress);
-    });
 }
+    
+
+   
 //need to countinue to trouble shoot, letters are not showing up
 
