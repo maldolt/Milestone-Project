@@ -20,10 +20,9 @@ window.onload = function() {
         ['fish', '🐟'],
         ['shark', '🦈'],
         ['whale', '🐳'],
+        ['octopus', '🐙'],
       ]);
       
-      
-
     let word_list = [...words.keys()];
     //Get random word from choices
     let getRandomWord = function(list) {
@@ -52,9 +51,7 @@ window.onload = function() {
         letters = document.querySelectorAll(".alphabet");
         livesSpan.textContent = lives;
      
-        //selecting the word from choices
-   
-             
+        //selecting the word from choices  
         for(let i = 0; i < select_word.length; i++){
             let html = `<p class="word">_</p>`;
             wordDiv.insertAdjacentHTML('beforeend', html);
@@ -75,9 +72,8 @@ let decreaseLife = function () {
     if (lives === 0) {
       showNotif('lost');
     }
-  };
+  }; console.log(select_word);    
 }  
-    console.log(lives);    
-
    
-//need to countinue to trouble shoot, letters are not showing up
+
+
