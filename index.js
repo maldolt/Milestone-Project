@@ -4,7 +4,7 @@
 //trying querySelector by class
 window.onload = function() {
 
-    let lettersDiv = document.querySelector(".letters-div"); //html line 21
+    let letterDiv = document.querySelector(".letter-div"); //html line 21
     let wordDiv = document.querySelector(".word-div"); //html line 22
     let livesSpan = document.querySelector(".lives"); //html line 23
     let notification = document.querySelector(".notification"); //html line 27
@@ -16,11 +16,10 @@ window.onload = function() {
     let lives;
 
     //words for the word div
-    let words = new Map ([
-        ['whale', 'largest animal'], 
-        ['fish', 'most common'], 
-        ['shark', 'dangerous']
-    ]);
+    let words = new Map([
+        ['whale'],['turtle'],['fish'],
+      ]);
+      
 
     let word_list = [...words.keys()];
     //Get random word from choices
@@ -37,30 +36,45 @@ window.onload = function() {
             //letters
             for(let i of 'abcdefghijklmnopqrstuvwxyz'){
                 let html = `<button class="alphabet">${i.toUpperCase()}</button>`;
-                lettersDiv.insertAdjacentHTML('beforeend',html);
+                letterDiv.insertAdjacentHTML('beforeend',html);
             }
         }else if (state === 'reset'){
             letters.forEach(button => {
             button.classList.remove('disabled');
-            });
             notification.classList.add('hidden');
+            });    
         }
+        select_word = getRandomWord(word_list); 
         lives = 8; 
-
         letters = document.querySelectorAll(".alphabet");
         livesSpan.textContent = lives;
      
         //selecting the word from choices
    
-        select_word = getRandomWord(word_list);           
+             
         for(let i = 0; i < select_word.length; i++){
             let html = `<p class="word">_</p>`;
             wordDiv.insertAdjacentHTML('beforeend', html);
         }    
     }; 
     init('start');
-}
-    
+
+    let showNotification = function (msg) {
+        notification.classList.remove('hidden');
+        notificationSpan.textContent = select_word;
+        notificationResults.textContent = `You ${msg}`;
+    };
+    // decrease life
+let decreaseLife = function () {
+    lives--;
+
+    liveSpan.textContent = lives;
+    if (lives === 0) {
+      showNotif('lost');
+    }
+  };
+}  
+    console.log(lives);    
 
    
 //need to countinue to trouble shoot, letters are not showing up

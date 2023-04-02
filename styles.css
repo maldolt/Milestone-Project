@@ -11,7 +11,7 @@ body {
     margin: auto;
 }
 
-.reset {
+.reset, .notification-botton {
     background-color: orange;
     color: white;
     cursor: pointer;
