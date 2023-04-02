@@ -4,29 +4,27 @@
 //trying querySelector by class
 window.onload = function() {
 
-
-    let lettersDiv = document.querySelector(".letters-div");
-    let canvas = document.querySelector(".canvas");
-    let wordDiv = document.querySelector(".word-div");
-    let livesSpan = document.querySelector(".lives");
-    let notification = document.querySelector(".notification");
-    let resetButton = document.querySelector(".reset");
-    let playAgain = document.querySelector(".notification-button");
+    let lettersDiv = document.querySelector(".letters-div"); //html line 21
+    let wordDiv = document.querySelector(".word-div"); //html line 22
+    let livesSpan = document.querySelector(".lives"); //html line 23
+    let notification = document.querySelector(".notification"); //html line 27
+    let notificationResults = document.querySelector(".notification-result") //html line 29
+    let resetButton = document.querySelector(".reset"); //html line 24
+    let playAgain = document.querySelector(".notification-button"); //html line 31
 
     let letters;
     let lives;
 
     //words for the word div
     let words = new Map ([['whale', 'largest animal'], 
-    ['fish', ' most common'], ['shark', 'dangerous']]);
+    ['fish', 'most common'], ['shark', 'dangerous']]);
 
     let wordChoice = [...words.keys()];
     //Get random word from choices
     let getRandomWord = function(list) {
-        return list[Math.floor(Math.random() * wordChoice.length)];
+        return list[Math.floor(Math.random() * list.length)];
     };
-    let select_word= getRandomWord(wordChoice)   
-console.log(wordChoice);
+    let select_word;
 
 // making buttons for letters, setting starting point and reset
     let init = function(state){
@@ -39,12 +37,24 @@ console.log(wordChoice);
             }
         }else if (state === 'reset'){
             letters.forEach(button => {
-                button.wordChoice.remove('disabled');
+            button.classList.remove('disabled');
+             notification.classList.add('hidden');
             });
-            notification.wordChoice.add('hidden');
+        select_word = getRandomWord(wordChoice);           
+        lives = 8;
+        }
+        letters = document.querySelectorAll('.alphabet');
+        livesSpan.textContent = lives;
+
+        //selecting the word from choices
+
+        for(let i = 0; i < select_word.length; i++){
+            let html = `<p class="word">_</p>`;
+            wordDiv.insertAdjacentHTML('beforeend', html);
         }
     };
-    letters = document.querySelectorAll('.alphabet');
-    livesSpan.textContent = lives;
+
+    init('start');
 }
+
 

@@ -15,7 +15,7 @@ Words
 
 Lives
 
--6 lives or maybe more -need to decrese when pressed
+-8 lives or maybe more -need to decrese when pressed
 
 End of Game
 
