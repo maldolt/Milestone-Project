@@ -12,9 +12,6 @@ window.onload = function() {
     let resetButton = document.querySelector(".reset"); //html line 24
     let playAgain = document.querySelector(".notification-button"); //html line 31
 
-    let letters;
-    let lives;
-
     //words for the word div
     let words = new Map ([['whale', 'largest animal'], 
     ['fish', 'most common'], ['shark', 'dangerous']]);
@@ -25,9 +22,12 @@ window.onload = function() {
         return list[Math.floor(Math.random() * list.length)];
     };
     let select_word;
-
+    let letters;
+    let lives;
 // making buttons for letters, setting starting point and reset
     let init = function(state){
+        letters = document.querySelectorAll('.alphabet');
+        lives = 8;
         wordDiv.innerHTML = '';
         if (state === 'start') {
             //letters
@@ -40,10 +40,8 @@ window.onload = function() {
             button.classList.remove('disabled');
              notification.classList.add('hidden');
             });
-        select_word = getRandomWord(wordChoice);           
-        lives = 8;
+            select_word = getRandomWord(wordChoice);           
         }
-        letters = document.querySelectorAll('.alphabet');
         livesSpan.textContent = lives;
 
         //selecting the word from choices
