@@ -10,6 +10,7 @@ window.onload = function() {
     let notification = document.querySelector(".notification"); //html line 27
     let notificationResults = document.querySelector(".notification-result") //html line 29
     let resetButton = document.querySelector(".reset"); //html line 24
+    let notificationSpan = document.querySelector(".notification-span"); //html line 30
     let playAgain = document.querySelector(".notification-button"); //html line 31
 
     //words for the word div
@@ -58,5 +59,5 @@ window.onload = function() {
         button.addEventListener('click', letterPress);
     });
 }
-
+//need to countinue to trouble shoot, letters are not showing up
 

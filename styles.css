@@ -33,7 +33,7 @@ button {
     margin-right: auto;
     width: 40%;
     box-shadow: 10px 10px 5px rgb(176, 238, 249);
-    background-color: rgb(0, 172, 199);
+    background-color: rgb(249, 252, 253);
     font-size: 30px;
     border-radius: 16px;
   }
@@ -46,5 +46,8 @@ button {
 .word {
     margin-right: 1.5rem;
 }
-  
+/*maybe add the alphabet style*/
+.alphabet{
+    
+}  
   
