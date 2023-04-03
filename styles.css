@@ -17,10 +17,13 @@ body {
     padding: 15px 15px;
     margin-left: auto;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Alkatra', cursive;
     border-radius: 16px;
-    width: 50%;
+    width: 250px;
+}
+.reset:hover {
+    background-color: rgb(243, 206, 138);
 }
 
 .hidden {
@@ -74,3 +77,15 @@ body {
 h3 {
     margin-top: 0;
   }
+
+.hint {
+    background-color: orange;
+    color: white;
+    cursor: help;
+    margin-left: auto;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: 'Alkatra', cursive;
+    border-radius: 8px;
+
+}

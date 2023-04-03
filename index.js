@@ -122,6 +122,7 @@ window.onload = function() {
     resetButton.addEventListener('click', function() {
         init('reset');
     });  
+    //need to add hint button
 }  
    
 

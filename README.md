@@ -6,22 +6,26 @@ Git hub Resource for Game idea (cathydutton) https://codepen.io/cathydutton/deta
 
 Tasks to do:
 
-Letters(4/2/23---letters show, and 'click')
+Letters(done✅)
 
 -Array for letters and have it acually display -make letters into clickable objects -disable letters that have been choosen
 
-Words(---blanks show, words are in console)
+Words(done✅)
 
 -blank lines where words will go -words that will be used: whale, shark, fish, octopus -this is the 'word-div'
 
-Lives(--lives change in js, and decrease when 'click')
+Lives(done✅)
 
 -8 lives or maybe more -need to decrese when pressed
 
-End of Game(hidden box that will show once game is over)
+End of Game(done✅)
 
 -game over -You won! -You did not win!
 
-Reset(made--- does not function yet)
+Reset(done✅)
 
 -Make play again button function -reset to starting point
+
+Add Hint button
+
+-add function in js 
