@@ -59,20 +59,73 @@ window.onload = function() {
     }; 
     init('start');
 
+    // check if the word is correct
+    let checkWord = function(){
+        let val = true;
+        for (let i = 0; i < wordDiv.children.length; i++){
+            if (wordDiv.children[i].textContent === '_'){
+                val = false;
+            }
+        }
+        return val;
+    };
+    
+    //defining the index for the selected word  
+    let getIndexes = function(letter){
+        let indexes = [];
+        [...select_word].forEach((val, i) => {
+            if (val === letter) {
+                let index = i;
+                indexes.push(index);
+            }
+        }); 
+        return indexes;
+    };
+
+    //notification
     let showNotification = function (msg) {
         notification.classList.remove('hidden');
         notificationSpan.textContent = select_word;
         notificationResults.textContent = `You ${msg}`;
     };
-    // decrease life
-let decreaseLife = function () {
-    lives--;
 
-    liveSpan.textContent = lives;
-    if (lives === 0) {
-      showNotif('lost');
-    }
-  }; console.log(select_word);    
+    // decrease life
+    let decreaseLife = function () {
+        lives--;
+        livesSpan.textContent = lives;
+        if (lives === 0) {
+            showNotification('did not win 🥲');
+        }
+    }; console.log(select_word);    
+
+     // pressing letters funtion
+    let letterPress = function(){
+        let letter = this.textContent.toLowerCase();
+
+        if (select_word.includes(letter)){
+            let indexes_list = getIndexes(letter);
+            indexes_list.forEach((val, i) =>{
+                wordDiv.children[val].textContent =this.textContent;
+            });
+            if(checkWord()) showNotification('Won!🎉')
+        }   else{
+            decreaseLife();
+        }
+        this.classList.add('disabled');
+    };
+    
+    letters.forEach(button =>{
+        button.addEventListener('click',letterPress);
+    });
+
+    
+    
+
+    
+    
+
+   
+
 }  
    
 
