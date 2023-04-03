@@ -118,14 +118,10 @@ window.onload = function() {
         button.addEventListener('click',letterPress);
     });
 
-    
-    
-
-    
-    
-
-   
-
+    //Reset play again button
+    resetButton.addEventListener('click', function() {
+        init('reset');
+    });  
 }  
    
 
