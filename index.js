@@ -94,7 +94,7 @@ window.onload = function() {
         lives--;
         livesSpan.textContent = lives;
         if (lives === 0) {
-            showNotification('did not win 🥲');
+            showNotification('did not win!');
         }
     }; console.log(select_word);    
 
@@ -107,7 +107,7 @@ window.onload = function() {
             indexes_list.forEach((val, i) =>{
                 wordDiv.children[val].textContent =this.textContent;
             });
-            if(checkWord()) showNotification('Won!🎉')
+            if(checkWord()) showNotification('Won!!!')
         }   else{
             decreaseLife();
         }
