@@ -11,17 +11,18 @@ window.onload = function() {
     let notificationResults = document.querySelector(".notification-result") //html line 29
     let resetButton = document.querySelector(".reset"); //html line 24
     let notificationSpan = document.querySelector(".notification-span"); //html line 30
-    let hintButton = document.querySelector(".hint-btn"); //html line 28
+    let hintButton = document.querySelector(".hint-btn"); //html line 29
     let hintDiv = document.querySelector(".hint"); //html line 27
+    let textHint = document.querySelector(".text-hint"); // html line 28
     let letters;
     let lives;
 
     //words for the word div
     let words = new Map([
-        ['fish', '🐟'],
-        ['shark', '🦈'],
-        ['whale', '🐳'],
-        ['octopus', '🐙'],
+        ['fish', 'most common'],
+        ['shark', 'dangerous sharp teeth'],
+        ['whale', 'biggest mammal '],
+        ['octopus', 'eight(8) tentacles'],
       ]);
       
     let word_list = [...words.keys()];
@@ -125,7 +126,8 @@ window.onload = function() {
     });  
     //need to add hint button
     hintButton.addEventListener('click', function(){
-        hintDiv.classList = words.get(select_word);
+        hintDiv.classList.remove('hidden');
+        textHint.textContent = words.get(select_word);
 
     })
 }  
