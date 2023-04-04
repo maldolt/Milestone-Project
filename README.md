@@ -1,8 +1,13 @@
 # Milestone-Project
-Guessing Word Game about animals for kids ages 6-10
+Guessing Word Game about ocean animals for kids ages 6-10
 
-Git hub Resource for Game idea (cathydutton) https://codepen.io/cathydutton/details/JjpxMm
+Git hub Resource for Game idea (cathydutton) 
 
+Dutton, C (2020). JavaScript Hangman game (v1) [Source code]. https://codepen.io/cathydutton/details/JjpxMm
+
+Git hub Resource (somvirs57)
+
+Singh, S (2021). javascript_beginner_projects (e491b94) [Source code]. https://github.com/somvirs57/javascript_beginner_projects/tree/main/hangman
 
 Tasks to do:
 
@@ -12,11 +17,11 @@ Letters(done✅)
 
 Words(done✅)
 
--blank lines where words will go -words that will be used: whale, shark, fish, octopus -this is the 'word-div'
+-blank lines where words will go -words that will be used: whale, shark, starfish, jellyfish, octopus -this is the 'word-div'
 
 Lives(done✅)
 
--8 lives or maybe more -need to decrese when pressed
+-8 lives -need to decrese when pressed
 
 End of Game(done✅)
 

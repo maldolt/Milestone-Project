@@ -1,5 +1,6 @@
+//**/ * Title: (JavaScript Hangman game) * Author:(Dutton, C) * Date: (2020) * Code version:(v1) * Availability:(https://codepen.io/cathydutton/details/JjpxMm) * **/
+//**/ * Title: (javascript_beginner_projects/) * Author:(Singh, S) * Date: (2021) * Code version:(e491b94) * Availability:(https://github.com/somvirs57/javascript_beginner_projects/blob/main/hangman/script.js) * **/
 //Declare variables from divs in HTML
-
 
 //trying querySelector by class
 window.onload = function() {
@@ -25,7 +26,7 @@ window.onload = function() {
         ['shark', '"This is a dangerous animal with sharp teeth."'],
         ['whale', '"This is the biggest mammal in the ocean."'],
         ['octopus', '"This ocean animal has eight(8) tentacles."'],
-      ]);
+    ]);
       
     let word_list = [...words.keys()];
     //Get random word from choices
@@ -34,17 +35,16 @@ window.onload = function() {
     };
     let select_word;
 
-
-// making buttons for letters, setting starting point and reset
-    let init = function(state){
+    // making buttons for letters, setting starting point and reset
+    let init = function(state) {
         wordDiv.innerHTML = '';
         if (state === 'start') {
             //letters
-            for(let i of 'abcdefghijklmnopqrstuvwxyz'){
+            for(let i of 'abcdefghijklmnopqrstuvwxyz') {
                 let html = `<button class="alphabet">${i.toLowerCase()}</button>`;
                 letterDiv.insertAdjacentHTML('beforeend',html);
             }
-        }else if (state === 'reset'){
+        } else if (state === 'reset') {
             letters.forEach(button => {
             button.classList.remove('disabled');
             notification.classList.add('hidden');
@@ -66,10 +66,10 @@ window.onload = function() {
     init('start');
 
     // check if the word is correct
-    let checkWord = function(){
+    let checkWord = function() {
         let val = true;
-        for (let i = 0; i < wordDiv.children.length; i++){
-            if (wordDiv.children[i].textContent === '_'){
+        for (let i = 0; i < wordDiv.children.length; i++) {
+            if (wordDiv.children[i].textContent === '_') {
                 val = false;
             }
         }
@@ -93,18 +93,20 @@ window.onload = function() {
         notification.classList.remove('hidden');
         notificationSpan.textContent = select_word;
         notificationResults.textContent = `You ${msg}`;
+         //trying audio, did not work    
     };
+   
 
     // decrease life
     let decreaseLife = function () {
         lives--;
         livesSpan.textContent = lives;
         if (lives === 0) {
-            showNotification('did not win!');
+            showNotification('did not win!👀');
         }
     }; //console.log(select_word);    
 
-     // pressing letters funtion
+    // pressing letters funtion
     let letterPress = function(){
         let letter = this.textContent.toLowerCase();
 
@@ -113,26 +115,26 @@ window.onload = function() {
             indexes_list.forEach((val, i) =>{
                 wordDiv.children[val].textContent =this.textContent;
             });
-            if(checkWord()) showNotification('Won!!!')
+            if(checkWord()) showNotification('Won!!!👍')
         }   else{
             decreaseLife();
         }
         this.classList.add('disabled');
     };
     
-    letters.forEach(button =>{
+    letters.forEach(button => {
         button.addEventListener('click',letterPress);
     });
 
     //Reset play again button
     resetButton.addEventListener('click', function() {
         init('reset');
-    });  
+    }); 
+
     //need to add hint button
-    hintButton.addEventListener('click', function(){
+    hintButton.addEventListener('click', function() {
         hintDiv.classList.remove('hidden');
         textHint.textContent = words.get(select_word);
-
     })
 }  
    
