@@ -26,6 +26,6 @@ Reset(done✅)
 
 -Make play again button function -reset to starting point
 
-Add Hint button
+Add Hint button(done✅)
 
 -add function in js 

@@ -19,10 +19,12 @@ window.onload = function() {
 
     //words for the word div
     let words = new Map([
-        ['fish', 'most common'],
-        ['shark', 'dangerous sharp teeth'],
-        ['whale', 'biggest mammal '],
-        ['octopus', 'eight(8) tentacles'],
+        ['jellyfish', '"This is a fish with no brain, heart, bones or eyes."'],
+        ['starfish', '"This is a fish in shape of a star."'],
+        ['shark', '"This is a dangerous animal with sharp teeth."'],
+        ['shark', '"This is a dangerous animal with sharp teeth."'],
+        ['whale', '"This is the biggest mammal in the ocean."'],
+        ['octopus', '"This ocean animal has eight(8) tentacles."'],
       ]);
       
     let word_list = [...words.keys()];
@@ -46,6 +48,8 @@ window.onload = function() {
             letters.forEach(button => {
             button.classList.remove('disabled');
             notification.classList.add('hidden');
+            //hint reset
+            hintDiv.classList.add('hidden');
             });    
         }
         select_word = getRandomWord(word_list); 

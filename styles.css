@@ -91,3 +91,8 @@ h3 {
 .hint-btn:hover{
   background-color: rgb(243, 206, 138);
 }
+
+.hint{
+  background-color: white;
+  font-size: 20px;
+}
