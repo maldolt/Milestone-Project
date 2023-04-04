@@ -11,7 +11,7 @@ window.onload = function() {
     let notificationResults = document.querySelector(".notification-result") //html line 29
     let resetButton = document.querySelector(".reset"); //html line 24
     let notificationSpan = document.querySelector(".notification-span"); //html line 30
-    let playAgain = document.querySelector(".notification-button"); //html line 31
+    let hintButton = document.querySelector(".hint"); //html line 27
     let letters;
     let lives;
 
@@ -37,7 +37,7 @@ window.onload = function() {
         if (state === 'start') {
             //letters
             for(let i of 'abcdefghijklmnopqrstuvwxyz'){
-                let html = `<button class="alphabet">${i.toUpperCase()}</button>`;
+                let html = `<button class="alphabet">${i.toLowerCase()}</button>`;
                 letterDiv.insertAdjacentHTML('beforeend',html);
             }
         }else if (state === 'reset'){
@@ -96,7 +96,7 @@ window.onload = function() {
         if (lives === 0) {
             showNotification('did not win!');
         }
-    }; console.log(select_word);    
+    }; //console.log(select_word);    
 
      // pressing letters funtion
     let letterPress = function(){
@@ -123,6 +123,9 @@ window.onload = function() {
         init('reset');
     });  
     //need to add hint button
+    hintButton.addEventListener('click', function(){
+        
+    })
 }  
    
 

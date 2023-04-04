@@ -55,7 +55,7 @@ body {
     margin: 0 8px 8px 0;
     list-style:none;
     width: 25px;
-    height:25px;
+    height: 30px;
     padding-top:0;
     background: white;
     cursor:pointer;
@@ -87,5 +87,7 @@ h3 {
     text-decoration: none;
     font-family: 'Alkatra', cursive;
     border-radius: 8px;
-
+}
+.hint:hover{
+  background-color: rgb(243, 206, 138);
 }
