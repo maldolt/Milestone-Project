@@ -78,7 +78,7 @@ h3 {
     margin-top: 0;
   }
 
-.hint {
+.hint-btn {
     background-color: orange;
     color: white;
     cursor: help;
@@ -88,6 +88,6 @@ h3 {
     font-family: 'Alkatra', cursive;
     border-radius: 8px;
 }
-.hint:hover{
+.hint-btn:hover{
   background-color: rgb(243, 206, 138);
 }
