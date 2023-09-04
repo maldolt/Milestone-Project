@@ -1,0 +1,99 @@
+body {
+  background-image: linear-gradient(to right, #07e1fd, white);
+  font-family: "Alkatra", cursive;
+  text-align: center;
+  font-size: 15px;
+}
+
+.work {
+  width: fit-content;
+  margin: auto;
+}
+
+.reset {
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+  padding: 15px 15px;
+  margin-left: auto;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Alkatra", cursive;
+  border-radius: 16px;
+  width: 250px;
+}
+.reset:hover {
+  background-color: rgb(243, 206, 138);
+}
+
+.hidden {
+  display: none;
+}
+
+.notification {
+  width: 40%;
+  box-shadow: 10px 10px 5px rgb(176, 238, 249);
+  background-color: rgb(249, 252, 253);
+  font-size: 25px;
+  border-radius: 16px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.word-div {
+  display: inline-flex;
+  font-size: 33px;
+}
+.word-div .word {
+  margin-right: 1.5rem;
+}
+
+.alphabet {
+  float: left;
+  margin: 0 8px 8px 0;
+  list-style: none;
+  width: 25px;
+  height: 30px;
+  padding-top: 0;
+  background: white;
+  cursor: pointer;
+  border: solid 1px black;
+  font-size: 20px;
+  font-family: "Alkatra", cursive;
+  border-radius: 4px;
+}
+.alphabet:hover {
+  background-color: rgb(29, 133, 153);
+  border: none;
+}
+.alphabet.disabled {
+  pointer-events: none;
+  background-color: rgb(241, 156, 45);
+}
+
+h3 {
+  margin-top: 0;
+}
+
+.hint-btn {
+  background-color: orange;
+  color: white;
+  cursor: help;
+  margin-left: auto;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: "Alkatra", cursive;
+  border-radius: 8px;
+}
+.hint-btn:hover {
+  background-color: rgb(243, 206, 138);
+}
+
+.hint {
+  background-color: white;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
